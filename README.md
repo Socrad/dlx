@@ -26,7 +26,7 @@ Example
 			{false, true, false},
 			{true, false, false},
 		}
-		columnNames := []string{"hat", "cap", "vinnie"}
+	  columnNames := []string{"hat", "cap", "vinnie"}
 	
 	  header, err := dlx.Initialize(matrix, columnNames)
 	  
