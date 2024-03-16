@@ -89,7 +89,7 @@ type node struct {
 	column dlxNode
 }
 
-type ColumnNode struct {
+type columnNode struct {
 	node
 	size int
 	name string
@@ -156,23 +156,23 @@ func (n *node) decreaseSize() {
 	panic("Type node doesn't have a size field: .decreaseSize()")
 }
 
-func (n *ColumnNode) getName() string {
+func (n *columnNode) getName() string {
 	return n.name
 }
 
-func (n *ColumnNode) setName(name string) {
+func (n *columnNode) setName(name string) {
 	n.name = name
 }
 
-func (n *ColumnNode) getSize() int {
+func (n *columnNode) getSize() int {
 	return n.size
 }
 
-func (n *ColumnNode) increaseSize() {
+func (n *columnNode) increaseSize() {
 	n.size++
 }
 
-func (n *ColumnNode) decreaseSize() {
+func (n *columnNode) decreaseSize() {
 	n.size--
 }
 
@@ -202,14 +202,14 @@ func checkInputValue(matrix [][]bool, columnNames []string) error {
 }
 
 func initColumnHeaders(columnNames []string) dlxNode {
-	var header dlxNode = &ColumnNode{} // node와 columnNode를 DLXNode 인터페이스로 포장해서 사용
+	var header dlxNode = &columnNode{} // node와 columnNode를 DLXNode 인터페이스로 포장해서 사용
 	header.setLeft(header)
 	header.setRight(header)
 
 	leftNode := header
 
 	for _, name := range columnNames {
-		var newColumnNode dlxNode = &ColumnNode{}
+		var newColumnNode dlxNode = &columnNode{}
 		// 새로운 컬럼오브젝트 설정
 		newColumnNode.setUp(newColumnNode)
 		newColumnNode.setDown(newColumnNode)
