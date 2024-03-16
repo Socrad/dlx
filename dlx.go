@@ -95,7 +95,7 @@ type columnNode struct {
 	name string
 }
 
-// Node 구조체가 DLXNode 인터페이스를 충족하도록 메서드를 작성합니다.
+// node 구조체와 columnNode 구조체가 DLXNode 인터페이스를 충족하도록 메서드를 작성합니다.
 func (n *node) getLeft() dlxNode {
 	return n.left
 }
