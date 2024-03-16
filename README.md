@@ -1,4 +1,4 @@
-Dancing Links & Alorythm X 
+Dancing Links & Algorythm X 
 ==================================================================
 
 Introduce
