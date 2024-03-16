@@ -15,28 +15,28 @@ dlx.ResolveSolutions(solutions [][]dlxNode) [][][]string - Converts solutions to
 
 Example
 =======
-package main
-
-import "github.com/Socrad/dlx"
-
-func main() {
-  matrix := [][]bool{
-		{false, false, true},
-		{true, false, true},
-		{false, true, false},
-		{true, false, false},
+	package main
+	
+	import "github.com/Socrad/dlx"
+	
+	func main() {
+	  matrix := [][]bool{
+			{false, false, true},
+			{true, false, true},
+			{false, true, false},
+			{true, false, false},
+		}
+		columnNames := []string{"hat", "cap", "vinnie"}
+	
+	  header, err := dlx.Initialize(matrix, columnNames)
+	  
+	  getAll := true
+	  search := dlx.SearchFunction(getAll)
+	  solutions := search(header)
+	  result := dlx.ResolveSolutions(&solutions)
+	
+	  // ...
 	}
-	columnNames := []string{"hat", "cap", "vinnie"}
-
-  header, err := dlx.Initialize(matrix, columnNames)
-  
-  getAll := true
-  search := dlx.SearchFunction(getAll)
-  solutions := search(header)
-  result := dlx.ResolveSolutions(&solutions)
-
-  // ...
-}
-
+	
 
 
