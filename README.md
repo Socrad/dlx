@@ -8,7 +8,9 @@ This package provides solutions to the exact cover problem using Dancing Links a
 Usage
 =====
 dlx.Initialize(matrix [][]bool, columnNames []string) - Prepares nodes and provides header.
+
 dlx.SearchFunction(getAll bool) [][]dlxNode - Provides search function. If getAll is true, function will search all solutions, or function will get a solution. 
+
 dlx.ResolveSolutions(solutions [][]dlxNode) [][][]string - Converts solutions to a string slices, each string are one of columnNames.
 
 Example
